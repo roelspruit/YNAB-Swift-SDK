@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct User {
-    
+public struct User: Decodable {
+    public var id: String
 }

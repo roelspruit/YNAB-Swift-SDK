@@ -28,6 +28,7 @@
 		45BDB19120F20705007D675B /* YNABAPI+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19020F20705007D675B /* YNABAPI+Categories.swift */; };
 		45BDB19320F2081E007D675B /* YNABAPI+Payees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19220F2081E007D675B /* YNABAPI+Payees.swift */; };
 		45BDB19520F208EC007D675B /* YNABAPI+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19420F208EC007D675B /* YNABAPI+Transactions.swift */; };
+		45BDB19720F21D83007D675B /* YNABAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19620F21D83007D675B /* YNABAPI+User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		45BDB19020F20705007D675B /* YNABAPI+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+Categories.swift"; sourceTree = "<group>"; };
 		45BDB19220F2081E007D675B /* YNABAPI+Payees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+Payees.swift"; sourceTree = "<group>"; };
 		45BDB19420F208EC007D675B /* YNABAPI+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+Transactions.swift"; sourceTree = "<group>"; };
+		45BDB19620F21D83007D675B /* YNABAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+User.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				45BDB19020F20705007D675B /* YNABAPI+Categories.swift */,
 				45BDB19220F2081E007D675B /* YNABAPI+Payees.swift */,
 				45BDB19420F208EC007D675B /* YNABAPI+Transactions.swift */,
+				45BDB19620F21D83007D675B /* YNABAPI+User.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BDB16E20F1ECA4007D675B /* Budget.swift in Sources */,
+				45BDB19720F21D83007D675B /* YNABAPI+User.swift in Sources */,
 				45BDB18220F1EF66007D675B /* CategoryGroup.swift in Sources */,
 				45BDB17420F1ECD7007D675B /* Category.swift in Sources */,
 				45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */,

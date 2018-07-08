@@ -13,8 +13,8 @@ public protocol YNABAPI {
     var ynabBaseUrl: String {get}
     var accessToken: String { get }
     
-//    // User
-//    func getUser() -> User
+    // User
+    func getUser(completion: @escaping (User?) -> Void)
     
     // Budgets
     func getBudgets(completion: @escaping ([Budget]?) -> Void)
