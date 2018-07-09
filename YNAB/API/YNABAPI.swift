@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol YNABAPI {    
+public protocol YNABAPI {
     var ynabBaseUrl: String { get }
     var accessToken: String { get }
 }
@@ -81,7 +81,7 @@ extension YNABAPI {
             let decoder = JSONDecoder()
             
             do {
-                let model = try decoder.decode(YNABAPIErrorWrapper.self, from: data)
+                let model = try decoder.decode(YNABErrorWrapper.self, from: data)
                 print("Error in response: \(model)")
                 completion(nil)
                 return
