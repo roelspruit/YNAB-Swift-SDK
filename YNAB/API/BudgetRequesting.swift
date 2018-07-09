@@ -34,7 +34,7 @@ extension BudgetRequesting where Self: YNABAPI {
 }
 
 struct BudgetSummaryWrapper: Decodable {
-    var budgets: [BudgetSummary]
+    var budgets: [BudgetSummary]    
 }
 
 struct BudgetDetailWrapper: Decodable {
