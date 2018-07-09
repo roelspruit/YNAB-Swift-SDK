@@ -1,4 +1,4 @@
-# YNAB-Swift-SDK
+# YNAB Swift SDK
 This is an unofficial Swift SDK for the [YouNeedABudget (YNAB)](https://www.youneedabudget.com) API. Please be aware that this SDK is not supported in any way by YNAB itself. No guarantees can be made about its functionality. Improper use of this SDK might corrupt your YNAB budget data.
 
 ## Usage
