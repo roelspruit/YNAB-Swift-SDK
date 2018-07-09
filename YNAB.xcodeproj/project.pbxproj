@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				45BDB18820F1F45C007D675B /* API */,
-				45BDB18520F1F0C5007D675B /* Authorisation */,
+				45BDB18520F1F0C5007D675B /* UI */,
 				45BDB15920F1EB3B007D675B /* YNAB.h */,
 				45BDB15A20F1EB3B007D675B /* Info.plist */,
 				45BDB16720F1EB68007D675B /* YNABClient.swift */,
@@ -131,12 +131,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		45BDB18520F1F0C5007D675B /* Authorisation */ = {
+		45BDB18520F1F0C5007D675B /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				45BDB18620F1F18A007D675B /* YNABAuthorisationViewController.swift */,
 			);
-			path = Authorisation;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		45BDB18820F1F45C007D675B /* API */ = {

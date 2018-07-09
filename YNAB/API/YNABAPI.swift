@@ -8,15 +8,9 @@
 
 import Foundation
 
-public protocol YNABAPI {
-    
-    var ynabBaseUrl: String {get}
+public protocol YNABAPI {    
+    var ynabBaseUrl: String { get }
     var accessToken: String { get }
-    
-    // User
-    func getUser(completion: @escaping (User?) -> Void)
-    
-    
 }
 
 extension YNABAPI {
