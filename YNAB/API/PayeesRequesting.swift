@@ -8,15 +8,20 @@
 
 import Foundation
 
-public extension YNABAPI {
+public protocol PayeesRequesting {
+    func getPayees(budgetId: String, completion: @escaping ([Payee]?) -> Void)
+    func getPayee(budgetId: String, payeeId: String, completion: @escaping(Payee?) -> Void)
+}
+
+extension PayeesRequesting where Self: YNABAPI {
     
-    func getPayees(budgetId: String, completion: @escaping([Payee]?) -> Void) {
+    public func getPayees(budgetId: String, completion: @escaping([Payee]?) -> Void) {
         getData(type: DataResponse<PayeesWrapper>.self, relativeURL: "/budgets/\(budgetId)/payees") { (model) in
             completion(model?.data.payees)
         }
     }
     
-    func getPayee(budgetId: String, payeeId: String, completion: @escaping(Payee?) -> Void) {
+    public func getPayee(budgetId: String, payeeId: String, completion: @escaping(Payee?) -> Void) {
         getData(type: DataResponse<PayeeWrapper>.self, relativeURL: "/budgets/\(budgetId)/payees/\(payeeId)") { (model) in
             completion(model?.data.payee)
         }

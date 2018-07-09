@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class YNABClient: YNABAPI {
+public class YNABClient: YNABAPI, BudgetRequesting, AccountsRequesting, CategoriesRequesting, PayeesRequesting, TransactionsRequesting, UserRequesting {
     
     public var accessToken: String
     

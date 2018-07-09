@@ -8,15 +8,20 @@
 
 import Foundation
 
-public extension YNABAPI {
+public protocol CategoriesRequesting {
+    func getCategories(budgetId: String, completion: @escaping ([CategoryGroup]?) -> Void)
+    func getCategory(budgetId: String, categoryId: String, completion: @escaping(Category?) -> Void)
+}
+
+extension CategoriesRequesting where Self: YNABAPI {
     
-    func getCategories(budgetId: String, completion: @escaping ([CategoryGroup]?) -> Void) {
+    public func getCategories(budgetId: String, completion: @escaping ([CategoryGroup]?) -> Void) {
         getData(type: DataResponse<CategoryGroupsWrapper>.self, relativeURL: "/budgets/\(budgetId)/categories") { (model) in
             completion(model?.data.category_groups)
         }
     }
     
-    func getCategory(budgetId: String, categoryId: String, completion: @escaping(Category?) -> Void) {
+    public func getCategory(budgetId: String, categoryId: String, completion: @escaping(Category?) -> Void) {
         getData(type: DataResponse<CategoryWrapper>.self, relativeURL: "/budgets/\(budgetId)/categories/\(categoryId)") { (model) in
             completion(model?.data.category)
         }

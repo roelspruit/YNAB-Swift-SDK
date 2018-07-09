@@ -8,15 +8,20 @@
 
 import Foundation
 
-public extension YNABAPI {
+public protocol AccountsRequesting {
+    func getAccounts(budgetId: String, completion: @escaping ([Account]?) -> Void)
+    func getAccount(budgetId: String, accountId: String, completion: @escaping (Account?) -> Void)
+}
+
+extension AccountsRequesting where Self: YNABAPI {
     
-    func getAccounts(budgetId: String, completion: @escaping ([Account]?) -> Void) {
+    public func getAccounts(budgetId: String, completion: @escaping ([Account]?) -> Void) {
         getData(type: DataResponse<AccountsWrapper>.self, relativeURL: "/budgets/\(budgetId)/accounts") { (model) in
             completion(model?.data.accounts)
         }
     }
     
-    func getAccount(budgetId: String, accountId: String, completion: @escaping (Account?) -> Void) {
+    public func getAccount(budgetId: String, accountId: String, completion: @escaping (Account?) -> Void) {
         getData(type: DataResponse<AccountWrapper>.self, relativeURL: "/budgets/\(budgetId)/accounts/\(accountId)") { (model) in
             completion(model?.data.account)
         }

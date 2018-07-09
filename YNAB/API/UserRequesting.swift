@@ -8,9 +8,13 @@
 
 import Foundation
 
-public extension YNABAPI {
+public protocol UserRequesting {
+    func getUser(completion: @escaping (User?) -> Void)
+}
+
+extension UserRequesting where Self: YNABAPI {
     
-    func getUser(completion: @escaping (User?) -> Void) {
+    public func getUser(completion: @escaping (User?) -> Void) {
         getData(type: DataResponse<UserWrapper>.self, relativeURL: "/user") { (model) in
             completion(model?.data.user)
         }

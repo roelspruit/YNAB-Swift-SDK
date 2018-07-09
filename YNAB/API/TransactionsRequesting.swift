@@ -8,45 +8,52 @@
 
 import Foundation
 
-public extension YNABAPI {
+public protocol TransactionsRequesting {
+    func getTransactions(budgetId: String, completion: @escaping ([Transaction]?) -> Void)
+    func getTransactions(budgetId: String, accountId: String, completion: @escaping ([Transaction]?) -> Void)
+    func getTransactions(budgetId: String, categoryId: String, completion: @escaping ([Transaction]?) -> Void)
+    func getTransactions(budgetId: String, payeeId: String, completion: @escaping ([Transaction]?) -> Void)
+    func getTransaction(budgetId: String, transactionId: String, completion: @escaping (Transaction?) -> Void)
+}
+
+extension TransactionsRequesting where Self: YNABAPI {
     
-    func getTransactions(budgetId: String, completion: @escaping ([Transaction]?) -> Void) {
+    public func getTransactions(budgetId: String, completion: @escaping ([Transaction]?) -> Void) {
         getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
-    func getTransactions(budgetId: String, accountId: String, completion: @escaping ([Transaction]?) -> Void) {
+    public func getTransactions(budgetId: String, accountId: String, completion: @escaping ([Transaction]?) -> Void) {
         getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/accounts/\(accountId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
-    func getTransactions(budgetId: String, categoryId: String, completion: @escaping ([Transaction]?) -> Void) {
+    public func getTransactions(budgetId: String, categoryId: String, completion: @escaping ([Transaction]?) -> Void) {
         getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/categories/\(categoryId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
-    func getTransactions(budgetId: String, payeeId: String, completion: @escaping ([Transaction]?) -> Void) {
+    public func getTransactions(budgetId: String, payeeId: String, completion: @escaping ([Transaction]?) -> Void) {
         getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/payees/\(payeeId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
-    func getTransaction(budgetId: String, transactionId: String, completion: @escaping (Transaction?) -> Void) {
+    public func getTransaction(budgetId: String, transactionId: String, completion: @escaping (Transaction?) -> Void) {
         getData(type: DataResponse<TransactionWrapper>.self, relativeURL: "/budgets/\(budgetId)/transactions/\(transactionId)") { (model) in
             completion(model?.data.transaction)
         }
     }
     
-    func createTransaction(transaction: SaveTransaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
+    public func createTransaction(transaction: SaveTransaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
         let creationRequest = SaveTransactionWrapper(transaction: transaction)
         postData(type: TransactionWrapper.self, body: creationRequest, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
             completion(model?.transaction)
         }
-    }
-    
+    }    
 }
 
 struct TransactionsWrapper: Decodable {
