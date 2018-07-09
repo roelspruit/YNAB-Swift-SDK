@@ -4,14 +4,14 @@ This is an unofficial Swift SDK for the [YouNeedABudget (YNAB)](www.youneedabudg
 ## Usage
 ``` Swift
 // Ask the user to log into YNAB
-let authorize = YNABAuthorisationViewController(clientId: "CLIENTID", redirectUri: "REDIRECTURL") { (accessToken) in
-		// Use returned accesstoken to create a YNAB client
-    let ynab = YNABClient(accessToken: accessToken!)
-    
-    // Use the client to request the desired data
-    ynab.getBudgets { (budgets) in
-        // Use data
-    }
+let authorize = YNABLoginViewController(clientId: "CLIENTID", redirectUri: "REDIRECTURL") { (accessToken) in
+	// Use returned accesstoken to create a YNAB client
+	let ynab = YNABClient(accessToken: accessToken!)
+	    
+	// Use the client to request the desired data
+	ynab.getBudgets { (budgets) in
+	    // Use data
+	}
 }
         
 present(authorize, animated: true, completion: nil)

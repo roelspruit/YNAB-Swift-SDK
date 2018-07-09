@@ -25,7 +25,7 @@
 		45BDB18020F1EF3A007D675B /* BudgetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */; };
 		45BDB18220F1EF66007D675B /* CategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18120F1EF66007D675B /* CategoryGroup.swift */; };
 		45BDB18420F1EFD0007D675B /* YNABAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18320F1EFD0007D675B /* YNABAPI.swift */; };
-		45BDB18720F1F18A007D675B /* YNABAuthorisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18620F1F18A007D675B /* YNABAuthorisationViewController.swift */; };
+		45BDB18720F1F18A007D675B /* YNABLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */; };
 		45BDB18A20F1F4FC007D675B /* BudgetRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18920F1F4FC007D675B /* BudgetRequesting.swift */; };
 		45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18C20F2041E007D675B /* CurrencyFormat.swift */; };
 		45BDB18F20F205F2007D675B /* AccountsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18E20F205F2007D675B /* AccountsRequesting.swift */; };
@@ -59,7 +59,7 @@
 		45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettings.swift; sourceTree = "<group>"; };
 		45BDB18120F1EF66007D675B /* CategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroup.swift; sourceTree = "<group>"; };
 		45BDB18320F1EFD0007D675B /* YNABAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABAPI.swift; sourceTree = "<group>"; };
-		45BDB18620F1F18A007D675B /* YNABAuthorisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABAuthorisationViewController.swift; sourceTree = "<group>"; };
+		45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABLoginViewController.swift; sourceTree = "<group>"; };
 		45BDB18920F1F4FC007D675B /* BudgetRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRequesting.swift; sourceTree = "<group>"; };
 		45BDB18C20F2041E007D675B /* CurrencyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormat.swift; sourceTree = "<group>"; };
 		45BDB18E20F205F2007D675B /* AccountsRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRequesting.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		45BDB18520F1F0C5007D675B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				45BDB18620F1F18A007D675B /* YNABAuthorisationViewController.swift */,
+				45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */,
 				45BDB19120F20705007D675B /* CategoriesRequesting.swift in Sources */,
 				45BDB18A20F1F4FC007D675B /* BudgetRequesting.swift in Sources */,
-				45BDB18720F1F18A007D675B /* YNABAuthorisationViewController.swift in Sources */,
+				45BDB18720F1F18A007D675B /* YNABLoginViewController.swift in Sources */,
 				45AAC9EB20F3A7FB00EE930E /* TransactionFlagColor.swift in Sources */,
 				45BDB17620F1ECEB007D675B /* Payee.swift in Sources */,
 				45BDB17220F1ECC9007D675B /* Account.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  YNABAuthorisationViewController.swift
+//  YNABLoginViewController.swift
 //  YNAB
 //
 //  Created by Roel Spruit on 08/07/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-public class YNABAuthorisationViewController: UIViewController {
+public class YNABLoginViewController: UIViewController {
 
     var webView: WKWebView!
     let clientId: String
