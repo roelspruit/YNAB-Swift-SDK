@@ -29,6 +29,7 @@
 		45BDB19320F2081E007D675B /* YNABAPI+Payees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19220F2081E007D675B /* YNABAPI+Payees.swift */; };
 		45BDB19520F208EC007D675B /* YNABAPI+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19420F208EC007D675B /* YNABAPI+Transactions.swift */; };
 		45BDB19720F21D83007D675B /* YNABAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19620F21D83007D675B /* YNABAPI+User.swift */; };
+		45BDB19920F241D9007D675B /* YNABAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19820F241D9007D675B /* YNABAPIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		45BDB19220F2081E007D675B /* YNABAPI+Payees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+Payees.swift"; sourceTree = "<group>"; };
 		45BDB19420F208EC007D675B /* YNABAPI+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+Transactions.swift"; sourceTree = "<group>"; };
 		45BDB19620F21D83007D675B /* YNABAPI+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YNABAPI+User.swift"; sourceTree = "<group>"; };
+		45BDB19820F241D9007D675B /* YNABAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABAPIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */,
 				45BDB18120F1EF66007D675B /* CategoryGroup.swift */,
 				45BDB18C20F2041E007D675B /* CurrencyFormat.swift */,
+				45BDB19820F241D9007D675B /* YNABAPIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				45BDB18F20F205F2007D675B /* YNABAPI+Accounts.swift in Sources */,
 				45BDB18420F1EFD0007D675B /* YNABAPI.swift in Sources */,
 				45BDB17A20F1ED12007D675B /* Month.swift in Sources */,
+				45BDB19920F241D9007D675B /* YNABAPIError.swift in Sources */,
 				45BDB16820F1EB68007D675B /* YNABClient.swift in Sources */,
 				45BDB17020F1ECB5007D675B /* Transaction.swift in Sources */,
 				45BDB17820F1ED00007D675B /* PayeeLocation.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 
 public extension YNABAPI {
     
-    public func getBudgets(completion: @escaping ([Budget]?) -> Void) {
+    public func getBudgets(completion: @escaping ([BudgetSummary]?) -> Void) {
         getData(type: BudgetSummaryResponse.self, relativeURL: "/budgets") { (model) in
             completion(model?.data.budgets)
         }
@@ -33,7 +33,7 @@ struct BudgetSummaryResponse: Decodable {
 }
 
 struct BudgetSummaryWrapper: Decodable {
-    var budgets: [Budget]
+    var budgets: [BudgetSummary]
 }
 
 struct BudgetDetailResponse: Decodable {

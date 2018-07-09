@@ -8,6 +8,10 @@
 
 import Foundation
 
-public struct PayeeLocation {
-    
+public struct PayeeLocation: Decodable {
+    public var id: String
+    public var payee_id: String
+    public var latitude: String
+    public var longitude: String
+    public var deleted: Bool
 }

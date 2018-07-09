@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  YNABAPIError.swift
 //  YNAB
 //
 //  Created by Roel Spruit on 08/07/2018.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct Account: Decodable {
+public struct YNABAPIError: Decodable {
     public var id: String
     public var name: String
+    public var detail: String
 }

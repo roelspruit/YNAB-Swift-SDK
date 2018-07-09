@@ -17,7 +17,7 @@ public protocol YNABAPI {
     func getUser(completion: @escaping (User?) -> Void)
     
     // Budgets
-    func getBudgets(completion: @escaping ([Budget]?) -> Void)
+    func getBudgets(completion: @escaping ([BudgetSummary]?) -> Void)
     func getBudget(budgetId: String, completion: @escaping (Budget?) -> Void)
     func getBudgetSettings(budgetId: String, completion: @escaping (BudgetSettings?) -> Void)
     
@@ -55,6 +55,7 @@ extension YNABAPI {
         }
         
         var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "accept")
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -75,5 +76,57 @@ extension YNABAPI {
             }
             
         }.resume()
+    }
+    
+    func postData<T: Decodable, U: Encodable>(type: T.Type, body: U, relativeURL: String, completion: @escaping (_ model: T?) -> Void) {
+        
+        let fullUrl = ynabBaseUrl + relativeURL
+        guard let url = URL(string: fullUrl) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(body)
+            request.httpBody = data
+        } catch {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let model = try decoder.decode(YNABAPIError.self, from: data)
+                print("Error in response: \(model)")
+                completion(nil)
+            } catch  {
+                // do nothing
+            }
+            
+            if let string = String(data: data, encoding: String.Encoding.utf8) {
+                print(string)
+            }
+            
+            do {
+                let model = try decoder.decode(T.self, from: data)
+                completion(model)
+            } catch let error {
+                print(error)
+                completion(nil)
+            }
+            
+            }.resume()
     }
 }

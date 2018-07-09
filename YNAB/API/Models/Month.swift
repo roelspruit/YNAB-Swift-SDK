@@ -8,6 +8,8 @@
 
 import Foundation
 
-public struct Month {
-    
+public struct Month: Decodable {
+    public var month: String
+    public var note: String?
+    public var categories: [Category]
 }

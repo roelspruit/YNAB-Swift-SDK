@@ -40,6 +40,13 @@ public extension YNABAPI {
         }
     }
     
+    func createTransaction(transaction: Transaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
+        let creationRequest = TransactionCreation(transaction: transaction)
+        postData(type: TransactionWrapper.self, body: creationRequest, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
+            completion(model?.transaction)
+        }
+    }
+    
 }
 
 struct TransactionsResponse: Decodable {
