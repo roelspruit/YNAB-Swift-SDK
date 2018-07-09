@@ -87,6 +87,7 @@ extension YNABAPI {
         
         var request = URLRequest(url: url)
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
         request.httpMethod = "POST"
         
         do {
@@ -108,9 +109,10 @@ extension YNABAPI {
             let decoder = JSONDecoder()
             
             do {
-                let model = try decoder.decode(YNABAPIError.self, from: data)
+                let model = try decoder.decode(YNABAPIErrorWrapper.self, from: data)
                 print("Error in response: \(model)")
                 completion(nil)
+                return
             } catch  {
                 // do nothing
             }
