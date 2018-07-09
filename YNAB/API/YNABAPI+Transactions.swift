@@ -11,37 +11,37 @@ import Foundation
 public extension YNABAPI {
     
     func getTransactions(budgetId: String, completion: @escaping ([Transaction]?) -> Void) {
-        getData(type: TransactionsResponse.self, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
+        getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
     func getTransactions(budgetId: String, accountId: String, completion: @escaping ([Transaction]?) -> Void) {
-        getData(type: TransactionsResponse.self, relativeURL: "/budgets/\(budgetId)/accounts/\(accountId)/transactions") { (model) in
+        getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/accounts/\(accountId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
     func getTransactions(budgetId: String, categoryId: String, completion: @escaping ([Transaction]?) -> Void) {
-        getData(type: TransactionsResponse.self, relativeURL: "/budgets/\(budgetId)/categories/\(categoryId)/transactions") { (model) in
+        getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/categories/\(categoryId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
     func getTransactions(budgetId: String, payeeId: String, completion: @escaping ([Transaction]?) -> Void) {
-        getData(type: TransactionsResponse.self, relativeURL: "/budgets/\(budgetId)/payees/\(payeeId)/transactions") { (model) in
+        getData(type: DataResponse<TransactionsWrapper>.self, relativeURL: "/budgets/\(budgetId)/payees/\(payeeId)/transactions") { (model) in
             completion(model?.data.transactions)
         }
     }
     
     func getTransaction(budgetId: String, transactionId: String, completion: @escaping (Transaction?) -> Void) {
-        getData(type: TransactionResponse.self, relativeURL: "/budgets/\(budgetId)/transactions/\(transactionId)") { (model) in
+        getData(type: DataResponse<TransactionWrapper>.self, relativeURL: "/budgets/\(budgetId)/transactions/\(transactionId)") { (model) in
             completion(model?.data.transaction)
         }
     }
     
-    func createTransaction(transaction: Transaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
-        let creationRequest = TransactionCreation(transaction: transaction)
+    func createTransaction(transaction: SaveTransaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
+        let creationRequest = SaveTransactionWrapper(transaction: transaction)
         postData(type: TransactionWrapper.self, body: creationRequest, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
             completion(model?.transaction)
         }
@@ -49,16 +49,8 @@ public extension YNABAPI {
     
 }
 
-struct TransactionsResponse: Decodable {
-    var data: TransactionsWrapper
-}
-
 struct TransactionsWrapper: Decodable {
     var transactions: [Transaction]
-}
-
-struct TransactionResponse: Decodable {
-    var data: TransactionWrapper
 }
 
 struct TransactionWrapper: Decodable {

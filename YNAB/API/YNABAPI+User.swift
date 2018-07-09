@@ -11,14 +11,10 @@ import Foundation
 public extension YNABAPI {
     
     func getUser(completion: @escaping (User?) -> Void) {
-        getData(type: UserResponse.self, relativeURL: "/user") { (model) in
+        getData(type: DataResponse<UserWrapper>.self, relativeURL: "/user") { (model) in
             completion(model?.data.user)
         }
     }
-}
-
-struct UserResponse: Decodable {
-    var data: UserWrapper
 }
 
 struct UserWrapper: Decodable {

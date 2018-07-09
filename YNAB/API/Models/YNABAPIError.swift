@@ -13,3 +13,7 @@ public struct YNABAPIError: Decodable {
     public var name: String
     public var detail: String
 }
+
+public struct YNABAPIErrorWrapper: Decodable {
+    public var error: YNABAPIError
+}

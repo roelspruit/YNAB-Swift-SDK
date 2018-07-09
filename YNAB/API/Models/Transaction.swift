@@ -36,9 +36,22 @@ public struct Transaction: Codable {
     public var approved: Bool
     public var cleared: TransactionClearedState
     public var flag_color: TransactionFlagColor?
+}
+
+public struct SaveTransaction: Codable {
+    public var date: String
+    public var amount: Double
+    public var account_id: String
+    public var category_id: String?
+    public var payee_id: String?
+    public var payee_name: String?
+    public var memo: String?
+    public var import_id: String?
+    public var approved: Bool
+    public var cleared: TransactionClearedState
+    public var flag_color: TransactionFlagColor?
     
-    public init(id: String?,
-                date: String,
+    public init(date: String,
                 amount: Double,
                 account_id: String,
                 category_id: String?,
@@ -50,7 +63,6 @@ public struct Transaction: Codable {
                 cleared: TransactionClearedState,
                 flag_color: TransactionFlagColor?) {
         
-        self.id = id
         self.date = date
         self.amount = amount
         self.account_id = account_id
@@ -65,6 +77,6 @@ public struct Transaction: Codable {
     }
 }
 
-public struct TransactionCreation: Codable {
-    public var transaction: Transaction
+public struct SaveTransactionWrapper: Codable {
+    public var transaction: SaveTransaction
 }
