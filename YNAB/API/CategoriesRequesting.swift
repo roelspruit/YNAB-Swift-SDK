@@ -28,10 +28,10 @@ extension CategoriesRequesting where Self: YNABAPI {
     }
 }
 
-struct CategoryGroupsWrapper: Decodable {
+fileprivate struct CategoryGroupsWrapper: Decodable {
     var category_groups: [CategoryGroup]
 }
 
-struct CategoryWrapper: Decodable {
+fileprivate struct CategoryWrapper: Decodable {
     var category: Category
 }

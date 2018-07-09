@@ -14,9 +14,9 @@ public class YNABAuthorisationViewController: UIViewController {
     var webView: WKWebView!
     let clientId: String
     let redirectUri: String
-    var completion: ((_ accessToken: String?) -> Void)
+    var completion: ((_ accessToken: AccessToken?) -> Void)
     
-    public init(clientId: String, redirectUri: String, completion: @escaping (_ accessToken: String?) -> Void) {
+    public init(clientId: String, redirectUri: String, completion: @escaping (_ accessToken: AccessToken?) -> Void) {
         self.clientId = clientId
         self.redirectUri = redirectUri
         self.completion = completion
@@ -52,11 +52,17 @@ extension YNABAuthorisationViewController: WKNavigationDelegate {
             return
         }
         
-        if url.absoluteString.contains("access_token") {
-            let components = url.absoluteString.components(separatedBy: "access_token=")
-            if let accessToken = components.last?.components(separatedBy: "&").first {
+        if url.absoluteString.contains("access_token"),
+            let parameterString = url.absoluteString.components(separatedBy: "#").last {
+            
+            let parameters = parseParameters(url: parameterString)
+            
+            if let expirationSeconds = Double(parameters["expires_in"]!) {
+                let expiration = Date().addingTimeInterval(expirationSeconds)
+                let token = AccessToken(token: parameters["access_token"]!, expirationDate: expiration)
+                
                 decisionHandler(.cancel)
-                completion(accessToken)
+                completion(token)
                 dismiss(animated: true, completion: nil)
                 return
             }
@@ -64,4 +70,20 @@ extension YNABAuthorisationViewController: WKNavigationDelegate {
         
         decisionHandler(.allow)
     }
+    
+    private func parseParameters(url: String) -> [String: String] {
+        let components = url.components(separatedBy: "&")
+        
+        var dict = Dictionary<String, String>()
+        components.forEach { (parameter) in
+            let paramComponents = parameter.components(separatedBy: "=")
+            if paramComponents.count == 2 {
+                dict[paramComponents.first!] = paramComponents.last!
+            }
+        }
+        
+        return dict
+    }
 }
+
+

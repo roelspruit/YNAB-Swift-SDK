@@ -33,7 +33,9 @@
 		45BDB19320F2081E007D675B /* PayeesRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19220F2081E007D675B /* PayeesRequesting.swift */; };
 		45BDB19520F208EC007D675B /* TransactionsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19420F208EC007D675B /* TransactionsRequesting.swift */; };
 		45BDB19720F21D83007D675B /* UserRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19620F21D83007D675B /* UserRequesting.swift */; };
-		45BDB19920F241D9007D675B /* YNABAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19820F241D9007D675B /* YNABAPIError.swift */; };
+		45BDB19920F241D9007D675B /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19820F241D9007D675B /* ErrorDetail.swift */; };
+		45C1DBDA20F3C0530058D713 /* ErrorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBD920F3C0530058D713 /* ErrorName.swift */; };
+		45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +67,9 @@
 		45BDB19220F2081E007D675B /* PayeesRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayeesRequesting.swift; sourceTree = "<group>"; };
 		45BDB19420F208EC007D675B /* TransactionsRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRequesting.swift; sourceTree = "<group>"; };
 		45BDB19620F21D83007D675B /* UserRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequesting.swift; sourceTree = "<group>"; };
-		45BDB19820F241D9007D675B /* YNABAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABAPIError.swift; sourceTree = "<group>"; };
+		45BDB19820F241D9007D675B /* ErrorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
+		45C1DBD920F3C0530058D713 /* ErrorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorName.swift; sourceTree = "<group>"; };
+		45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +128,11 @@
 				45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */,
 				45BDB18120F1EF66007D675B /* CategoryGroup.swift */,
 				45BDB18C20F2041E007D675B /* CurrencyFormat.swift */,
-				45BDB19820F241D9007D675B /* YNABAPIError.swift */,
+				45BDB19820F241D9007D675B /* ErrorDetail.swift */,
 				45AAC9E820F3A7E700EE930E /* TransactionClearedState.swift */,
 				45AAC9EA20F3A7FB00EE930E /* TransactionFlagColor.swift */,
+				45C1DBD920F3C0530058D713 /* ErrorName.swift */,
+				45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,17 +246,19 @@
 				45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */,
 				45BDB19320F2081E007D675B /* PayeesRequesting.swift in Sources */,
 				45BDB19520F208EC007D675B /* TransactionsRequesting.swift in Sources */,
+				45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */,
 				45BDB19120F20705007D675B /* CategoriesRequesting.swift in Sources */,
 				45BDB18A20F1F4FC007D675B /* BudgetRequesting.swift in Sources */,
 				45BDB18720F1F18A007D675B /* YNABAuthorisationViewController.swift in Sources */,
 				45AAC9EB20F3A7FB00EE930E /* TransactionFlagColor.swift in Sources */,
 				45BDB17620F1ECEB007D675B /* Payee.swift in Sources */,
 				45BDB17220F1ECC9007D675B /* Account.swift in Sources */,
+				45C1DBDA20F3C0530058D713 /* ErrorName.swift in Sources */,
 				45BDB18F20F205F2007D675B /* AccountsRequesting.swift in Sources */,
 				45AAC9E720F3A7BF00EE930E /* SaveTransaction.swift in Sources */,
 				45BDB18420F1EFD0007D675B /* YNABAPI.swift in Sources */,
 				45BDB17A20F1ED12007D675B /* Month.swift in Sources */,
-				45BDB19920F241D9007D675B /* YNABAPIError.swift in Sources */,
+				45BDB19920F241D9007D675B /* ErrorDetail.swift in Sources */,
 				4518B4FB20F3A386009F5E1C /* DataResponse.swift in Sources */,
 				45BDB16820F1EB68007D675B /* YNABClient.swift in Sources */,
 				45BDB17020F1ECB5007D675B /* Transaction.swift in Sources */,

@@ -21,6 +21,6 @@ extension UserRequesting where Self: YNABAPI {
     }
 }
 
-struct UserWrapper: Decodable {
+fileprivate struct UserWrapper: Decodable {
     var user: User
 }

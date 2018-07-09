@@ -28,11 +28,11 @@ extension PayeesRequesting where Self: YNABAPI {
     }
 }
 
-struct PayeesWrapper: Decodable {
+fileprivate struct PayeesWrapper: Decodable {
     var payees: [Payee]
 }
 
-struct PayeeWrapper: Decodable {
+fileprivate struct PayeeWrapper: Decodable {
     var payee: Payee
 }
 

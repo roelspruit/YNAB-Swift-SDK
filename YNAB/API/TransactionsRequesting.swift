@@ -56,11 +56,11 @@ extension TransactionsRequesting where Self: YNABAPI {
     }    
 }
 
-struct TransactionsWrapper: Decodable {
+fileprivate struct TransactionsWrapper: Decodable {
     var transactions: [Transaction]
 }
 
-struct TransactionWrapper: Decodable {
+fileprivate struct TransactionWrapper: Decodable {
     var transaction: Transaction
 }
 

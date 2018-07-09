@@ -10,9 +10,9 @@ import Foundation
 
 public class YNABClient: YNABAPI, BudgetRequesting, AccountsRequesting, CategoriesRequesting, PayeesRequesting, TransactionsRequesting, UserRequesting {
     
-    public var accessToken: String
+    public var accessToken: AccessToken
     
-    public init(accessToken: String) {
+    public init(accessToken: AccessToken) {
         self.accessToken = accessToken
     }
 }

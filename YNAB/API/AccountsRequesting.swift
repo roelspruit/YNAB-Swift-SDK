@@ -28,10 +28,10 @@ extension AccountsRequesting where Self: YNABAPI {
     }
 }
 
-struct AccountsWrapper: Decodable {
+fileprivate struct AccountsWrapper: Decodable {
     var accounts: [Account]
 }
 
-struct AccountWrapper: Decodable {
+fileprivate struct AccountWrapper: Decodable {
     var account: Account
 }

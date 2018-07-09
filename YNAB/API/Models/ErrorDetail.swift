@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct YNABError: Decodable {
+public struct ErrorDetail: Decodable {
     public var id: String
-    public var name: String
+    public var name: ErrorName
     public var detail: String
 }
 
-public struct YNABErrorWrapper: Decodable {
-    public var error: YNABError
+public struct ErrorResponse: Decodable {
+    public var error: ErrorDetail
 }

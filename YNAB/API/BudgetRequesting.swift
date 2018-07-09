@@ -33,15 +33,15 @@ extension BudgetRequesting where Self: YNABAPI {
     }
 }
 
-struct BudgetSummaryWrapper: Decodable {
+fileprivate struct BudgetSummaryWrapper: Decodable {
     var budgets: [BudgetSummary]    
 }
 
-struct BudgetDetailWrapper: Decodable {
+fileprivate struct BudgetDetailWrapper: Decodable {
     var budget: Budget?
 }
 
-struct BudgetSettingsWrapper: Decodable {
+fileprivate struct BudgetSettingsWrapper: Decodable {
     var settings: BudgetSettings?
 }
 
