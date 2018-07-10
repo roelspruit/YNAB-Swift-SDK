@@ -58,7 +58,9 @@ extension YNABAPI {
     private func handleResponse<T: Decodable>(type: T.Type, data: Data?, completion: @escaping (_ model: T?) -> Void) {
         
         guard let data = data else {
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
             return
         }
         
@@ -70,15 +72,21 @@ extension YNABAPI {
         
         if let model = try? decoder.decode(ErrorResponse.self, from: data) {
             print("Error in response: \(model)")
-            completion(nil)
+            DispatchQueue.main.async {
+                completion(nil)
+            }
             return
         }
         
         if let model = try? decoder.decode(T.self, from: data) {
-            completion(model)
+            DispatchQueue.main.async {
+                completion(model)
+            }
             return
         }
         
-        completion(nil)
+        DispatchQueue.main.async {
+            completion(nil)
+        }
     }
 }

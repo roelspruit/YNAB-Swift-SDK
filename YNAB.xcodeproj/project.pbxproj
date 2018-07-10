@@ -13,7 +13,7 @@
 		45AAC9EB20F3A7FB00EE930E /* TransactionFlagColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AAC9EA20F3A7FB00EE930E /* TransactionFlagColor.swift */; };
 		45BDB15B20F1EB3B007D675B /* YNAB.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BDB15920F1EB3B007D675B /* YNAB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45BDB16820F1EB68007D675B /* YNABClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB16720F1EB68007D675B /* YNABClient.swift */; };
-		45BDB16E20F1ECA4007D675B /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB16D20F1ECA4007D675B /* Budget.swift */; };
+		45BDB16E20F1ECA4007D675B /* BudgetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB16D20F1ECA4007D675B /* BudgetDetail.swift */; };
 		45BDB17020F1ECB5007D675B /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB16F20F1ECB5007D675B /* Transaction.swift */; };
 		45BDB17220F1ECC9007D675B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB17120F1ECC9007D675B /* Account.swift */; };
 		45BDB17420F1ECD7007D675B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB17320F1ECD7007D675B /* Category.swift */; };
@@ -25,7 +25,7 @@
 		45BDB18020F1EF3A007D675B /* BudgetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */; };
 		45BDB18220F1EF66007D675B /* CategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18120F1EF66007D675B /* CategoryGroup.swift */; };
 		45BDB18420F1EFD0007D675B /* YNABAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18320F1EFD0007D675B /* YNABAPI.swift */; };
-		45BDB18720F1F18A007D675B /* YNABLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */; };
+		45BDB18720F1F18A007D675B /* YNLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18620F1F18A007D675B /* YNLoginViewController.swift */; };
 		45BDB18A20F1F4FC007D675B /* BudgetRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18920F1F4FC007D675B /* BudgetRequesting.swift */; };
 		45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18C20F2041E007D675B /* CurrencyFormat.swift */; };
 		45BDB18F20F205F2007D675B /* AccountsRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB18E20F205F2007D675B /* AccountsRequesting.swift */; };
@@ -36,6 +36,8 @@
 		45BDB19920F241D9007D675B /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDB19820F241D9007D675B /* ErrorDetail.swift */; };
 		45C1DBDA20F3C0530058D713 /* ErrorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBD920F3C0530058D713 /* ErrorName.swift */; };
 		45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */; };
+		45C1DBDE20F487E50058D713 /* BudgetSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDD20F487E50058D713 /* BudgetSummary.swift */; };
+		45C1DBE020F489790058D713 /* YNCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,7 @@
 		45BDB15920F1EB3B007D675B /* YNAB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNAB.h; sourceTree = "<group>"; };
 		45BDB15A20F1EB3B007D675B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45BDB16720F1EB68007D675B /* YNABClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABClient.swift; sourceTree = "<group>"; };
-		45BDB16D20F1ECA4007D675B /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		45BDB16D20F1ECA4007D675B /* BudgetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetail.swift; sourceTree = "<group>"; };
 		45BDB16F20F1ECB5007D675B /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		45BDB17120F1ECC9007D675B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		45BDB17320F1ECD7007D675B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		45BDB17F20F1EF3A007D675B /* BudgetSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSettings.swift; sourceTree = "<group>"; };
 		45BDB18120F1EF66007D675B /* CategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroup.swift; sourceTree = "<group>"; };
 		45BDB18320F1EFD0007D675B /* YNABAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABAPI.swift; sourceTree = "<group>"; };
-		45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNABLoginViewController.swift; sourceTree = "<group>"; };
+		45BDB18620F1F18A007D675B /* YNLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNLoginViewController.swift; sourceTree = "<group>"; };
 		45BDB18920F1F4FC007D675B /* BudgetRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRequesting.swift; sourceTree = "<group>"; };
 		45BDB18C20F2041E007D675B /* CurrencyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormat.swift; sourceTree = "<group>"; };
 		45BDB18E20F205F2007D675B /* AccountsRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRequesting.swift; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		45BDB19820F241D9007D675B /* ErrorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
 		45C1DBD920F3C0530058D713 /* ErrorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorName.swift; sourceTree = "<group>"; };
 		45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		45C1DBDD20F487E50058D713 /* BudgetSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummary.swift; sourceTree = "<group>"; };
+		45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNCategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4518B4FA20F3A386009F5E1C /* DataResponse.swift */,
-				45BDB16D20F1ECA4007D675B /* Budget.swift */,
+				45BDB16D20F1ECA4007D675B /* BudgetDetail.swift */,
 				45BDB16F20F1ECB5007D675B /* Transaction.swift */,
 				45AAC9E620F3A7BF00EE930E /* SaveTransaction.swift */,
 				45BDB17120F1ECC9007D675B /* Account.swift */,
@@ -133,6 +137,7 @@
 				45AAC9EA20F3A7FB00EE930E /* TransactionFlagColor.swift */,
 				45C1DBD920F3C0530058D713 /* ErrorName.swift */,
 				45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */,
+				45C1DBDD20F487E50058D713 /* BudgetSummary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,7 +145,8 @@
 		45BDB18520F1F0C5007D675B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				45BDB18620F1F18A007D675B /* YNABLoginViewController.swift */,
+				45BDB18620F1F18A007D675B /* YNLoginViewController.swift */,
+				45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -239,17 +245,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45BDB16E20F1ECA4007D675B /* Budget.swift in Sources */,
+				45BDB16E20F1ECA4007D675B /* BudgetDetail.swift in Sources */,
 				45BDB19720F21D83007D675B /* UserRequesting.swift in Sources */,
 				45BDB18220F1EF66007D675B /* CategoryGroup.swift in Sources */,
 				45BDB17420F1ECD7007D675B /* Category.swift in Sources */,
 				45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */,
+				45C1DBDE20F487E50058D713 /* BudgetSummary.swift in Sources */,
 				45BDB19320F2081E007D675B /* PayeesRequesting.swift in Sources */,
 				45BDB19520F208EC007D675B /* TransactionsRequesting.swift in Sources */,
 				45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */,
 				45BDB19120F20705007D675B /* CategoriesRequesting.swift in Sources */,
 				45BDB18A20F1F4FC007D675B /* BudgetRequesting.swift in Sources */,
-				45BDB18720F1F18A007D675B /* YNABLoginViewController.swift in Sources */,
+				45BDB18720F1F18A007D675B /* YNLoginViewController.swift in Sources */,
 				45AAC9EB20F3A7FB00EE930E /* TransactionFlagColor.swift in Sources */,
 				45BDB17620F1ECEB007D675B /* Payee.swift in Sources */,
 				45BDB17220F1ECC9007D675B /* Account.swift in Sources */,
@@ -266,6 +273,7 @@
 				45BDB18020F1EF3A007D675B /* BudgetSettings.swift in Sources */,
 				45BDB17E20F1EF1A007D675B /* User.swift in Sources */,
 				45AAC9E920F3A7E700EE930E /* TransactionClearedState.swift in Sources */,
+				45C1DBE020F489790058D713 /* YNCategoryTableViewController.swift in Sources */,
 				45BDB17C20F1EEDE007D675B /* ScheduledTransaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

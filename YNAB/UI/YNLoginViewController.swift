@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-public class YNABLoginViewController: UIViewController {
+public class YNLoginViewController: UIViewController {
 
     var webView: WKWebView!
     let clientId: String
@@ -44,7 +44,7 @@ public class YNABLoginViewController: UIViewController {
     }
 }
 
-extension YNABAuthorisationViewController: WKNavigationDelegate {
+extension YNLoginViewController: WKNavigationDelegate {
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
     

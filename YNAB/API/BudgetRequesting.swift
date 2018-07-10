@@ -20,7 +20,7 @@ extension BudgetRequesting where Self: YNABAPI {
         }
     }
     
-    public func getBudget(budgetId: String, completion: @escaping (Budget?) -> Void) {
+    public func getBudget(budgetId: String, completion: @escaping (BudgetDetail?) -> Void) {
         getData(type: DataResponse<BudgetDetailWrapper>.self, relativeURL: "/budgets/\(budgetId)") { (model) in
             completion(model?.data.budget)
         }
@@ -38,7 +38,7 @@ fileprivate struct BudgetSummaryWrapper: Decodable {
 }
 
 fileprivate struct BudgetDetailWrapper: Decodable {
-    var budget: Budget?
+    var budget: BudgetDetail?
 }
 
 fileprivate struct BudgetSettingsWrapper: Decodable {

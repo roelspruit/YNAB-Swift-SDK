@@ -11,4 +11,6 @@ import Foundation
 public struct Category: Decodable {
     public var id: String
     public var name: String
+    public var category_group_id: String
+    public var hidden: Bool
 }

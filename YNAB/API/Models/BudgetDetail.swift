@@ -1,5 +1,5 @@
 //
-//  Budget.swift
+//  BudgetDetail.swift
 //  YNAB
 //
 //  Created by Roel Spruit on 08/07/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Budget: Decodable {
+public struct BudgetDetail: Decodable {
     public var id: String
     public var name: String
     public var accounts: [Account]
@@ -16,13 +16,8 @@ public struct Budget: Decodable {
     public var payee_locations: [PayeeLocation]
     public var categories: [Category]
     public var transactions: [Transaction]
-    //public var subtransactions: [Transaction]
+    public var subtransactions: [Transaction]
     public var scheduled_transactions: [Transaction]
     public var scheduled_subtransactions: [Transaction]
     public var months: [Month]
-}
-
-public struct BudgetSummary: Decodable {
-    public var id: String
-    public var name: String
 }
