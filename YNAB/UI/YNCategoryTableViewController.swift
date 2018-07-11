@@ -12,15 +12,17 @@ public class YNCategoryTableViewController: UITableViewController {
 
     private let client: YNABClient
     private var budgetId: String
+    private let hideInternal: Bool
     
     private var categoryGroups = [CategoryGroup]()
     private var categories = [Category]()
     private var categorySelected: (Category) -> Void
     
-    public init(client: YNABClient, budgetId: String, categorySelected: @escaping (Category) -> Void) {
+    public init(client: YNABClient, budgetId: String, hideInternal: Bool = true, categorySelected: @escaping (Category) -> Void) {
         self.client = client
         self.categorySelected = categorySelected
         self.budgetId = budgetId
+        self.hideInternal = hideInternal
         super.init(style: .plain)
         
         self.title = NSLocalizedString("Categories", comment: "Category list title")
@@ -39,17 +41,25 @@ public class YNCategoryTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
-        super.viewDidLoad()
+    public override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
 
         client.getCategories(budgetId: budgetId) { [weak self] (groups) in
-            self?.categories = groups?.flatMap({$0.categories}).filter({!$0.hidden}) ?? []
+
+            guard let hideInternal = self?.hideInternal else {
+                return
+            }
+            
+            self?.categories = groups?
+                .filter({(hideInternal && !$0.name.contains("Internal Master")) || !hideInternal})
+                .flatMap({$0.categories})
+                .filter({!$0.hidden}) ?? []
+            
             self?.categoryGroups = groups ?? []
             self?.tableView.reloadData()
         }
     }
-
-    // MARK: - Table view data source
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
