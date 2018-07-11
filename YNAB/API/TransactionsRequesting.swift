@@ -50,8 +50,8 @@ extension TransactionsRequesting where Self: YNABAPI {
     
     public func createTransaction(transaction: SaveTransaction, budgetId: String, completion: @escaping (Transaction?) -> Void) {
         let creationRequest = SaveTransactionWrapper(transaction: transaction)
-        postData(type: TransactionWrapper.self, body: creationRequest, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
-            completion(model?.transaction)
+        postData(type: DataResponse<TransactionWrapper>.self, body: creationRequest, relativeURL: "/budgets/\(budgetId)/transactions") { (model) in
+            completion(model?.data.transaction)
         }
     }    
 }
@@ -60,7 +60,7 @@ fileprivate struct TransactionsWrapper: Decodable {
     var transactions: [Transaction]
 }
 
-fileprivate struct TransactionWrapper: Decodable {
+public struct TransactionWrapper: Decodable {
     var transaction: Transaction
 }
 

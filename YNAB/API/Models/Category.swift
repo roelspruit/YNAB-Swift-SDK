@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Category: Decodable {
+public struct Category: Codable {
     public var id: String
     public var name: String
     public var category_group_id: String
