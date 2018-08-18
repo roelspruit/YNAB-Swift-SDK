@@ -22,7 +22,16 @@ This is an unofficial Swift SDK for the [YouNeedABudget (YNAB)](https://www.youn
 - Xcode 9.4
 
 ## Installation
-Cocoapods installation is not supported yet. Download the project and include it in your XCode workspace to use it.
+#### CocoaPods
+You can use [CocoaPods](http://cocoapods.org/) to install `YNAB-Swift-SDK` by adding it to your `Podfile`:
+
+```ruby
+platform :ios, '11.0'
+use_frameworks!
+pod 'YNAB-Swift-SDK', :git => 'https://github.com/roelspruit/YNAB-Swift-SDK.git'
+```
+#### Manually
+Download the complete Source directory and include it in your project.
 
 ## Basic Usage Example
 ``` Swift
