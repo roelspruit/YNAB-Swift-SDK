@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Source/*'
+  s.source_files = 'Source/*', 'Source/UI/*', 'Source/API/*', 'Source/API/Models/*'
 
   s.requires_arc = true
 end
