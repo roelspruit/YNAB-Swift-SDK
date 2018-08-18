@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450408D02106250B00D87AE9 /* YNPayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450408CF2106250B00D87AE9 /* YNPayeeTableViewController.swift */; };
 		4518B4FB20F3A386009F5E1C /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4518B4FA20F3A386009F5E1C /* DataResponse.swift */; };
 		45AAC9E720F3A7BF00EE930E /* SaveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AAC9E620F3A7BF00EE930E /* SaveTransaction.swift */; };
 		45AAC9E920F3A7E700EE930E /* TransactionClearedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AAC9E820F3A7E700EE930E /* TransactionClearedState.swift */; };
@@ -38,9 +39,11 @@
 		45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */; };
 		45C1DBDE20F487E50058D713 /* BudgetSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDD20F487E50058D713 /* BudgetSummary.swift */; };
 		45C1DBE020F489790058D713 /* YNCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */; };
+		45FAAD142107A827002EDA2D /* YNBudgetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FAAD132107A827002EDA2D /* YNBudgetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450408CF2106250B00D87AE9 /* YNPayeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNPayeeTableViewController.swift; sourceTree = "<group>"; };
 		4518B4FA20F3A386009F5E1C /* DataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
 		45AAC9E620F3A7BF00EE930E /* SaveTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTransaction.swift; sourceTree = "<group>"; };
 		45AAC9E820F3A7E700EE930E /* TransactionClearedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionClearedState.swift; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 		45C1DBDB20F3C3DC0058D713 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		45C1DBDD20F487E50058D713 /* BudgetSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummary.swift; sourceTree = "<group>"; };
 		45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNCategoryTableViewController.swift; sourceTree = "<group>"; };
+		45FAAD0D21078628002EDA2D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		45FAAD132107A827002EDA2D /* YNBudgetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNBudgetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,7 @@
 		45BDB15820F1EB3B007D675B /* YNAB */ = {
 			isa = PBXGroup;
 			children = (
+				45FAAD0D21078628002EDA2D /* README.md */,
 				45BDB18820F1F45C007D675B /* API */,
 				45BDB18520F1F0C5007D675B /* UI */,
 				45BDB15920F1EB3B007D675B /* YNAB.h */,
@@ -147,6 +153,8 @@
 			children = (
 				45BDB18620F1F18A007D675B /* YNLoginViewController.swift */,
 				45C1DBDF20F489790058D713 /* YNCategoryTableViewController.swift */,
+				450408CF2106250B00D87AE9 /* YNPayeeTableViewController.swift */,
+				45FAAD132107A827002EDA2D /* YNBudgetTableViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				45BDB17420F1ECD7007D675B /* Category.swift in Sources */,
 				45BDB18D20F2041E007D675B /* CurrencyFormat.swift in Sources */,
 				45C1DBDE20F487E50058D713 /* BudgetSummary.swift in Sources */,
+				450408D02106250B00D87AE9 /* YNPayeeTableViewController.swift in Sources */,
 				45BDB19320F2081E007D675B /* PayeesRequesting.swift in Sources */,
 				45BDB19520F208EC007D675B /* TransactionsRequesting.swift in Sources */,
 				45C1DBDC20F3C3DC0058D713 /* AccessToken.swift in Sources */,
@@ -259,6 +268,7 @@
 				45BDB18720F1F18A007D675B /* YNLoginViewController.swift in Sources */,
 				45AAC9EB20F3A7FB00EE930E /* TransactionFlagColor.swift in Sources */,
 				45BDB17620F1ECEB007D675B /* Payee.swift in Sources */,
+				45FAAD142107A827002EDA2D /* YNBudgetTableViewController.swift in Sources */,
 				45BDB17220F1ECC9007D675B /* Account.swift in Sources */,
 				45C1DBDA20F3C0530058D713 /* ErrorName.swift in Sources */,
 				45BDB18F20F205F2007D675B /* AccountsRequesting.swift in Sources */,
@@ -414,6 +424,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = YNAB/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,6 +452,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = YNAB/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

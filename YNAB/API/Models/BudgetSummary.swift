@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BudgetSummary: Decodable {
+public struct BudgetSummary: Codable {
     public var id: String
     public var name: String
 }

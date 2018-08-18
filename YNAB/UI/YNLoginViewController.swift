@@ -21,10 +21,17 @@ public class YNLoginViewController: UIViewController {
         self.redirectUri = redirectUri
         self.completion = completion
         super.init(nibName: nil, bundle: nil)
+        
+        self.title = NSLocalizedString("Login", comment: "Login screen title")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func cancel() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override public func loadView() {

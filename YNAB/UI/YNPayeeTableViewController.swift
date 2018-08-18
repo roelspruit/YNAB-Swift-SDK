@@ -1,33 +1,30 @@
 //
-//  YNCategoryTableViewController.swift
+//  YNPayeeTableViewController.swift
 //  YNAB
 //
-//  Created by Roel Spruit on 10/07/2018.
+//  Created by Roel Spruit on 23/07/2018.
 //  Copyright © 2018 dinkywonder. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class YNCategoryTableViewController: UITableViewController {
-
+public class YNPayeeTableViewController: UITableViewController {
+    
     private let client: YNABClient
     private var budgetId: String
-    private let hideInternal: Bool
     
-    private var categoryGroups = [CategoryGroup]()
-    private var categories = [Category]()
-    private var categorySelected: (Category) -> Void
-    private var selectedCategory: Category?
+    private var payees = [Payee]()
+    private var payeeSelected: (Payee) -> Void
+    private var selectedPayee: Payee?
     
-    public init(client: YNABClient, budgetId: String, selectedCategory: Category?, hideInternal: Bool = true, categorySelected: @escaping (Category) -> Void) {
+    public init(client: YNABClient, budgetId: String, selectedPayee: Payee?, payeeSelected: @escaping (Payee) -> Void) {
         self.client = client
-        self.categorySelected = categorySelected
+        self.payeeSelected = payeeSelected
         self.budgetId = budgetId
-        self.hideInternal = hideInternal
-        self.selectedCategory = selectedCategory
+        self.selectedPayee = selectedPayee
         super.init(style: .plain)
         
-        self.title = NSLocalizedString("Select a category", comment: "Category list title")
+        self.title = NSLocalizedString("Select a payee", comment: "Payee list title")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "reuseIdentifier")
     }
@@ -50,47 +47,37 @@ public class YNCategoryTableViewController: UITableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-
-        client.getCategories(budgetId: budgetId) { [weak self] (groups) in
-
-            guard let hideInternal = self?.hideInternal else {
-                return
-            }
+        
+        client.getPayees(budgetId: budgetId, completion: { [weak self] (payees) in
             
-            self?.categories = groups?
-                .filter({(hideInternal && !$0.name.contains("Internal Master")) || !hideInternal})
-                .flatMap({$0.categories})
-                .filter({!$0.hidden}) ?? []
-            
-            self?.categoryGroups = groups ?? []
+            self?.payees = payees ?? []
             self?.tableView.reloadData()
-        }
+        })
     }
-
+    
     public override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return payees.count
     }
-
+    
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        let category = categories[indexPath.row]
-        let group = categoryGroups.first(where: {$0.id == category.category_group_id})!
         
-        cell.textLabel?.text = "\(category.name) (\(group.name))"
-        cell.accessoryType = category.id == selectedCategory?.id ? .checkmark : .none
-
+        let payee = payees[indexPath.row]
+        
+        cell.textLabel?.text = payee.name
+        cell.accessoryType = payee.id == selectedPayee?.id ? .checkmark : .none
+        
         return cell
     }
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        categorySelected(category)
-        selectedCategory = category
+        let payee = payees[indexPath.row]
+        payeeSelected(payee)
+        selectedPayee = payee
         tableView.reloadData()
         dismiss(animated: true, completion: nil )
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Payee: Decodable {
+public struct Payee: Codable {
     public var id: String
     public var name: String
 }
